@@ -15,12 +15,11 @@ export class LoanComponent implements OnInit {
 
   loanForm: FormGroup;
   submitted: boolean = false;
-  _tmpProgress: number = 10;
+  _tmpProgress: number = 0;
   _tmpMinTerm: number = 6;
   _tmpMaxTerm: number = 36;
   _tmpMinLoan: number = 1000;
   _tmpMaxLoan: number = 20000;
-
   _tmpTerm: any = [
       {
         term: this._tmpMinTerm,
@@ -38,7 +37,9 @@ export class LoanComponent implements OnInit {
         term: this._tmpMaxTerm,
         name: "36 m."
       }
-  ]
+  ];
+  private _ifSliced: boolean = false;
+  private _tmpTermArr: any [];
 
   get progress() { return this._tmpProgress; }
   get fields() { return this.loanForm.controls };
@@ -49,6 +50,20 @@ export class LoanComponent implements OnInit {
     private LoanInfoStorageService : LoanInfoStorageService
     ) {
   
+  }
+
+  checkLoanAmount($event) {
+    if($event > (this._tmpMinLoan * 5) && !this._ifSliced )
+    {
+      this._tmpTermArr = this._tmpTerm[0];
+      this._tmpTerm.splice(0,1);
+      this._ifSliced = true;
+    }
+
+    if($event < (this._tmpMinLoan * 5) && this._ifSliced && this._tmpTermArr){
+       this._tmpTerm.unshift(this._tmpTermArr);
+       this._ifSliced = false;
+    }
   }
 
    createForm() {

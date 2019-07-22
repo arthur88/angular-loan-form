@@ -20,7 +20,8 @@ workingForm: FormGroup;
    private currentSalary: Number;
    private currentAmount: Number;
    private currentSalaryMin: Number = 500;
-   private currentAmountMin: Number = 10000;;
+   private currentAmountMin: Number = 10000;
+   public SalaryToLow = false;
 
   get progress() { return this._tmpProgress; }
   get fields() { return this.workingForm.controls };
@@ -44,7 +45,7 @@ workingForm: FormGroup;
     }
 
    this.LoanInfoStorageService.WorkedTimeChange(this.workingForm.value['wTime']);
-   this.router.navigate(['/working-time']);
+   this.router.navigate(['/summary']);
   }
 
   ngOnInit() {
@@ -52,8 +53,9 @@ workingForm: FormGroup;
    this.currentSalary = this.LoanInfoStorageService.getSalary();
    this.currentAmount = this.LoanInfoStorageService.getLoanAmount();
 
+  /** if current salary is lower then 500 and current amount of loan is bigger then 10000 */
    if(this.currentSalary <= this.currentSalaryMin && this.currentAmount >= this.currentAmountMin) {
-     console.log('cool');
+     this.SalaryToLow = true;
    }
    else {
       this.createForm();

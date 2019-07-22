@@ -18,7 +18,6 @@ export class LoanInfoStorageService {
 
   loanTermChange(data: number) {
     this.loanTerm = data;
-    console.log(this.loanTerm);
   }
 
   userNameChange(data: string) {
@@ -41,4 +40,15 @@ export class LoanInfoStorageService {
     return this.loanAmount;
   }
 
+  getloanTerm() {
+    return this.loanTerm;
+  }
+ 
+  getUserName() {
+    return this.userName;
+  }
+ 
+  getWorkedTime() {
+    return this.workedTime;
+  }  
 }

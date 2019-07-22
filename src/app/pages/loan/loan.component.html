@@ -5,11 +5,11 @@
 <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
   <div class="col-auto">
     <label for="loanAmount" class="sr-only" >Amount of loan</label>
-    <input type="number" class="form-control" formControlName="loanAmount" [ngClass]="{ 'is-invalid': submitted && fields.loanAmount.errors}" />
+    <input type="number" class="form-control" formControlName="loanAmount" [ngClass]="{ 'is-invalid': submitted && fields.loanAmount.errors}" (focusout)='checkLoanAmount($event.target.value)'/>
 
     <small id="loanAmount" class="form-text text-muted">Minimum: 1000, maximum: 20000</small>
   <div *ngIf="submitted && fields.loanAmount.errors" class="invalid-feedback">
-      <div *ngIf="fields.loanAmount.errors.required">Incorrect ammount</div>
+      <div *ngIf="fields.loanAmount.errors">Incorrect ammount</div>
   </div>
 
   </div>
@@ -20,7 +20,7 @@
       <option *ngFor="let item of _tmpTerm" value="{{ item.term }}">{{ item.name }}</option>
     </select>
     <div *ngIf="submitted && fields.loanTerm.errors" class="invalid-feedback">
-      <div *ngIf="fields.loanTerm.errors.required">Minimum 6 month</div>
+      <div *ngIf="fields.loanTerm.errors">Minimum 6 month</div>
     </div>
   
   </div>   

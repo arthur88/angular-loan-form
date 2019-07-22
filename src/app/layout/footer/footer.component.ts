@@ -9,7 +9,7 @@ import { Router} from '@angular/router';
 export class FooterComponent implements OnInit {
 
   _tmpDate = new Date();
-  _tmpSolution: string = 'http://www.webai.lt';
+  _tmpSolution: string = 'http://www.webai.lt/cv';
 
   get currentDate() {
     return this._tmpDate;

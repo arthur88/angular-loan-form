@@ -10,6 +10,7 @@ import { LoanComponent } from './pages/loan/loan.component';
 import { UserInfoComponent } from './pages/user-info/user-info.component';
 import { SalaryComponent } from './pages/salary/salary.component';
 import { WorkingTimeComponent } from './pages/working-time/working-time.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'  },
@@ -25,16 +26,19 @@ const routes: Routes = [
   }, {
     path: 'salary',
     component: SalaryComponent,
-  } , {
+  }, {
     path: 'working-time',
     component: WorkingTimeComponent,
+  }, {
+    path: 'summary',
+    component: SummaryComponent,
   }
 
   
 ];
 
 @NgModule({
-  declarations: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent],
+  declarations: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, SummaryComponent],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),

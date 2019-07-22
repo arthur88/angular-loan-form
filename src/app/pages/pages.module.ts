@@ -11,6 +11,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { LoanInfoStorageService } from '../global/services/loan-info-storage.service';
 import { SalaryComponent } from './salary/salary.component';
 import { WorkingTimeComponent } from './working-time/working-time.component';
+import { SummaryComponent } from './summary/summary.component';
 
 
 @NgModule({
@@ -21,8 +22,8 @@ import { WorkingTimeComponent } from './working-time/working-time.component';
      ReactiveFormsModule,
      ProgressBarModule
   ],
-  declarations: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, ProgressBarComponent],
-  exports: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, ProgressBarModule],
+  declarations: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, SummaryComponent],
+  exports: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent,WorkingTimeComponent, ProgressBarModule, SummaryComponent],
   providers: [LoanInfoStorageService]
 })
 export class PagesModule { }
