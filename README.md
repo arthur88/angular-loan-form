@@ -25,7 +25,7 @@
 
 
 
-### Application capabilities
+### Application capabilities / implementation
 1. Form contains intro window from where able to start step-by-step filling loan
 2. 4 Steps consist of questions. In firt step if user select more then 5000 eur. then dissapear capability to select 6 month from loan term dropdown, if enter lower then 5000 eur. then 6 months appear againis. All dropdown  dispalyed from `_tmpTerm` JSON object,
 3. Every question is mandatory, implemented following validtors:
@@ -41,4 +41,4 @@
 8. Application design is responsive
 9. All forms data is saved into service called  `loan-info-storage.service`
 10. Implemented progress bar to show completion status in percentage values
-11. Footer year uses datePip
+11. Footer year uses datePipe.
