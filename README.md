@@ -1,4 +1,4 @@
-# Loan form made on Angular, by using Typescript.
+# Loan form made on Angular
 
 [Working solution on StackBlitz ⚡️](https://stackblitz.com/edit/angular-9fdatz)
 
