@@ -13,8 +13,7 @@ import { LoanInfoStorageService } from './global/services/loan-info-storage.serv
     AppRoutingModule,
     BrowserModule, 
     HttpModule,
-    LayoutModule,
-    
+    LayoutModule
   ],
     
   declarations: [ AppComponent ],

@@ -15,7 +15,7 @@ export class LoanComponent implements OnInit {
 
   loanForm: FormGroup;
   submitted: boolean = false;
-  _tmpProgress: number = 0;
+  _tmpProgress: number = 10;
   _tmpMinTerm: number = 6;
   _tmpMaxTerm: number = 36;
   _tmpMinLoan: number = 1000;

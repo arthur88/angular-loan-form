@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ProgressBarModule } from './global/progress-bar/progress-bar.module';
 import { HomeComponent } from './pages/home/home.component';
 import { LoanComponent } from './pages/loan/loan.component';
 import { UserInfoComponent } from './pages/user-info/user-info.component';
@@ -38,7 +39,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
     BrowserModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    ProgressBarModule
   ],
   exports: [ RouterModule ]
 })

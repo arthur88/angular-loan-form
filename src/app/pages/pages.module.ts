@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ProgressBarModule } from '../global/progress-bar/progress-bar.module';
 import { HomeComponent } from './home/home.component';
 import { LoanComponent } from './loan/loan.component';
 import { UserInfoComponent } from './user-info/user-info.component';
@@ -17,10 +18,11 @@ import { WorkingTimeComponent } from './working-time/working-time.component';
     CommonModule,
      BrowserModule,
      FormsModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     ProgressBarModule
   ],
-  declarations: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, ],
-  exports: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent],
+  declarations: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, ProgressBarComponent],
+  exports: [HomeComponent, LoanComponent, UserInfoComponent, SalaryComponent, WorkingTimeComponent, ProgressBarModule],
   providers: [LoanInfoStorageService]
 })
 export class PagesModule { }
