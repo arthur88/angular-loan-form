@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-12">
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="progress" aria-valuenow="0"
+			 aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="col-auto">
+    <label for="userFullName">Your name</label>
+    <input type="text" class="form-control" formControlName="userFullName" [ngClass]="{ 'is-invalid': submitted && fields.userFullName.errors}" />
+
+  <div *ngIf="submitted && fields.userFullName.errors" class="invalid-feedback">
+      <div *ngIf="fields.userFullName.errors.required">Incorectly filled field</div>
+  </div>
+
+  </div>
+  <br>
+  <div class="col-auto">
+      <a routerLink="/loan" class="btn btn-secondary">Back</a>
+      <button type="submit" class="btn btn-success">Continue &rarr;</button>
+  </div>
+</form>
+  </div>
+</div>

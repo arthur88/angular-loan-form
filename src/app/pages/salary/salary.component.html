@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-12">
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="progress" aria-valuenow="0"
+			 aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+<form [formGroup]="salaryForm" (ngSubmit)="onSubmit()">
+  <div class="col-auto">
+    <label for="salary">Your salary (per month)</label>
+    <input type="number" class="form-control" formControlName="salary" [ngClass]="{ 'is-invalid': submitted && fields.salary.errors}" />
+
+  <div *ngIf="submitted && fields.salary.errors" class="invalid-feedback">
+      <div *ngIf="fields.salary.errors">Minimum 100 eur. / month.</div>
+  </div>
+
+  </div>
+  <br>
+  <div class="col-auto">
+      <a routerLink="/userinfo" class="btn btn-secondary">Back</a>
+      <button type="submit" class="btn btn-success">Continue &rarr;</button>
+  </div>
+</form>
+  </div>
+</div>

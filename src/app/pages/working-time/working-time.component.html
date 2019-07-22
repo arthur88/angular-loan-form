@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-12">
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="progress" aria-valuenow="0"
+			 aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+<form [formGroup]="workingForm" (ngSubmit)="onSubmit()">
+  <div class="col-auto">
+    <label for="wTime">Total working time in current job (in months)</label>
+    <input type="number" class="form-control" formControlName="wTime" [ngClass]="{ 'is-invalid': submitted && fields.wTime.errors}" />
+
+  <div *ngIf="submitted && fields.wTime.errors" class="invalid-feedback">
+      <div *ngIf="fields.wTime.errors">Minimum 3 month.</div>
+  </div>
+
+  </div>
+  <br>
+  <div class="col-auto">
+      <a routerLink="/salary" class="btn btn-secondary">Back</a>
+      <button type="submit" class="btn btn-success">Continue &rarr;</button>
+  </div>
+</form>
+  </div>
+</div>

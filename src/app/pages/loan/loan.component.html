@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-12">
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="progress"  aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+<form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+  <div class="col-auto">
+    <label for="loanAmount" class="sr-only" >Amount of loan</label>
+    <input type="number" class="form-control" formControlName="loanAmount" [ngClass]="{ 'is-invalid': submitted && fields.loanAmount.errors}" />
+
+    <small id="loanAmount" class="form-text text-muted">Minimum: 1000, maximum: 20000</small>
+  <div *ngIf="submitted && fields.loanAmount.errors" class="invalid-feedback">
+      <div *ngIf="fields.loanAmount.errors.required">Incorrect ammount</div>
+  </div>
+
+  </div>
+  <br>
+   <div class="col-auto" *ngIf="_tmpTerm.length">
+    <label for="loanTerm">Loan term</label>
+    <select class="form-control" formControlName="loanTerm" [ngClass]="{ 'is-invalid': submitted && fields.loanTerm.errors}">
+      <option *ngFor="let item of _tmpTerm" value="{{ item.term }}">{{ item.name }}</option>
+    </select>
+    <div *ngIf="submitted && fields.loanTerm.errors" class="invalid-feedback">
+      <div *ngIf="fields.loanTerm.errors.required">Minimum 6 month</div>
+    </div>
+  
+  </div>   
+  <br>
+  <div class="col-auto">
+      <a routerLink="/home" class="btn btn-secondary">Back</a>
+      <button type="submit" class="btn btn-success">Continue &rarr;</button>
+  </div>
+</form>
+  </div>
+</div>
