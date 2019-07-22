@@ -7,12 +7,11 @@ import { ProgressBarModule } from '../global/progress-bar/progress-bar.module';
 import { HomeComponent } from './home/home.component';
 import { LoanComponent } from './loan/loan.component';
 import { UserInfoComponent } from './user-info/user-info.component';
-
-import { LoanInfoStorageService } from '../global/services/loan-info-storage.service';
 import { SalaryComponent } from './salary/salary.component';
 import { WorkingTimeComponent } from './working-time/working-time.component';
 import { SummaryComponent } from './summary/summary.component';
 
+import { LoanInfoStorageService } from '../global/services/loan-info-storage.service';
 
 @NgModule({
   imports: [
