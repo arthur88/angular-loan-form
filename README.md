@@ -44,4 +44,4 @@
 11. Footer year uses datePipe.
 
 
-12. Implemented some tests. To run tests need to change `src: main.ts` to `src: main-testing.ts` into application.json file
+12. Implemented some tests. To run tests need to change `src: main.ts` to `src: main-testing.ts` into `angular.json` file
