@@ -42,3 +42,6 @@
 9. All forms data is saved into service called  `loan-info-storage.service`
 10. Implemented progress bar to show completion status in percentage values
 11. Footer year uses datePipe.
+
+
+12. Implemented some tests. To run tests need to change `src: main.ts` to `src: main-testing.ts` into application.json file
