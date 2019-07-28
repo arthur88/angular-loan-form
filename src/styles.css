@@ -3,3 +3,5 @@ footer a{
   cursor: pointer; 
   text-decoration:underline !important;
 }
+
+@import 'jasmine-core/lib/jasmine-core/jasmine.css';
